@@ -1,4 +1,4 @@
-const trim = s => s.replaceAll('	', '').replaceAll('\n', '');
+const trim = s => s.replaceAll('	', '').replaceAll('\n', '').replaceAll(' ', '');
 
 const hiragana = trim(`あ	い	う	え	お
 か	き	く	け	こ
@@ -14,19 +14,23 @@ const hiragana = trim(`あ	い	う	え	お
 ま	み	む	め	も
 や		ゆ		よ
 ら	り	る	れ	ろ
-わ	ゐ		ゑ	を`);
+わ	ん	を`);
 
 const katakana = trim(`ア	イ	ウ	エ	オ
 カ	キ	ク	ケ	コ
+ガ	ギ	グ	ゲ	ゴ
 サ	シ	ス	セ	ソ
+ザ	ジ	ズ	ゼ	ゾ
 タ	チ	ツ	テ	ト
+ダ	ヂ	ヅ	デ	ド
 ナ	ニ	ヌ	ネ	ノ
 ハ	ヒ	フ	ヘ	ホ
+バ	ビ	ブ	ベ	ボ
+パ	ピ	プ	ペ	ポ
 マ	ミ	ム	メ	モ
-ヤ		ユ	ヨ
+ヤ		ユ		ヨ
 ラ	リ	ル	レ	ロ
-ワ	ヰ		ヱ	ヲ
-ン`);
+ワ	ヲ ン`);
 
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
