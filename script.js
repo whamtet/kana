@@ -62,7 +62,9 @@ function* cycle(src) {
 const cycleElement = (id, src) => {
   const c = cycle(src);
   return () => {
-    document.getElementById(id).innerHTML = c.next().value;
+    const char = c.next().value;
+    document.getElementById(id).innerHTML = char;
+    setWord(id, char);
   };
 };
 const clickHiragana = cycleElement('hiragana', hiragana);
