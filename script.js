@@ -16,6 +16,11 @@ const hiragana = trim(`あ	い	う	え	お
 ら	り	る	れ	ろ
 わ	ん	を`);
 
+const hiraganaShort = trim(`あ	い	う	え	お
+か	き	く	け	こ
+さ	し	す	せ	そ
+た	ち	つ	て	と`);
+
 const katakana = trim(`ア	イ	ウ	エ	オ
 カ	キ	ク	ケ	コ
 ガ	ギ	グ	ゲ	ゴ
@@ -67,8 +72,11 @@ const cycleElement = (id, src) => {
     setWord(id, char);
   };
 };
+
+const clickHiraganaShort = cycleElement('hiraganaShort', hiraganaShort);
 const clickHiragana = cycleElement('hiragana', hiragana);
 const clickKatakana = cycleElement('katakana', katakana);
 
+clickHiraganaShort();
 clickHiragana();
 clickKatakana();

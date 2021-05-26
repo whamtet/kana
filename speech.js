@@ -7,5 +7,6 @@ const sayWord = (k) => () => {
     speechSynthesis.speak(u);
 };
 
+const sayHiraganaShort = sayWord('hiraganaShort');
 const sayHiragana = sayWord('hiragana');
 const sayKatakana = sayWord('katakana');
