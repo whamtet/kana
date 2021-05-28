@@ -1,5 +1,12 @@
 const trim = s => s.replaceAll('	', '').replaceAll('\n', '').replaceAll(' ', '');
 
+const romanji = [];
+for (const suffix of ['a', 'i', 'u', 'e', 'o']) {
+  for (const prefix of ['', 'k', 's', 't', 'n', 'h', 'm', 'y', 'r', 'w']) {
+    romanji.push(prefix + suffix);
+  }
+}
+
 const hiragana = trim(`あ	い	う	え	お
 か	き	く	け	こ
 が	ぎ	ぐ	げ	ご
@@ -61,11 +68,10 @@ function shuffle(array) {
 
   return array;
 }
-const shuffleString = s => shuffle(s.split(''));
 
 function* cycle(src) {
   while (true) {
-    for (s of shuffleString(src)) {
+    for (s of shuffle(src)) {
       yield s;
     }
   }
@@ -79,9 +85,10 @@ const cycleElement = (id, src) => {
   };
 };
 
-const clickHiraganaShort = cycleElement('hiraganaShort', hiraganaShort);
-const clickHiragana = cycleElement('hiragana', hiragana);
-const clickKatakana = cycleElement('katakana', katakana);
+const clickRomanji = cycleElement('romanji', romanji);
+const clickHiraganaShort = cycleElement('hiraganaShort', hiraganaShort.split(''));
+const clickHiragana = cycleElement('hiragana', hiragana.split(''));
+const clickKatakana = cycleElement('katakana', katakana.split(''));
 
 clickHiraganaShort();
 clickHiragana();
