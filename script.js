@@ -90,6 +90,7 @@ const clickHiraganaShort = cycleElement('hiraganaShort', hiraganaShort.split('')
 const clickHiragana = cycleElement('hiragana', hiragana.split(''));
 const clickKatakana = cycleElement('katakana', katakana.split(''));
 
+clickRomanji();
 clickHiraganaShort();
 clickHiragana();
 clickKatakana();
