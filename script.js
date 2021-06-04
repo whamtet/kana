@@ -1,9 +1,12 @@
 const trim = s => s.replaceAll('	', '').replaceAll('\n', '').replaceAll(' ', '');
 
-const romanji = [];
+const romanji = [], romanji2 = [];
 for (const suffix of ['a', 'i', 'u', 'e', 'o']) {
   for (const prefix of ['', 'k', 'g', 's', 'z', 't', 'd', 'n', 'h', 'b', 'p', 'm', 'y', 'r', 'w']) {
     romanji.push(prefix + suffix);
+  }
+  for (const prefix of ['', 'k', 's', 't']) {
+    romanji2.push(prefix + suffix);
   }
 }
 
@@ -81,16 +84,11 @@ const cycleElement = (id, src) => {
   return () => {
     const char = c.next().value;
     document.getElementById(id).innerHTML = char;
-    setWord(id, char);
   };
 };
 
 const clickRomanji = cycleElement('romanji', romanji);
-const clickHiraganaShort = cycleElement('hiraganaShort', hiraganaShort.split(''));
-const clickHiragana = cycleElement('hiragana', hiragana.split(''));
-const clickKatakana = cycleElement('katakana', katakana.split(''));
+const clickRomanji2 = cycleElement('romanji2', romanji2);
 
 clickRomanji();
-clickHiraganaShort();
-clickHiragana();
-clickKatakana();
+clickRomanji2();
