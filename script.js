@@ -5,7 +5,7 @@ for (const suffix of ['a', 'i', 'u', 'e', 'o']) {
   for (const prefix of ['', 'k', 'g', 's', 'z', 't', 'd', 'n', 'h', 'b', 'p', 'm', 'y', 'r', 'w']) {
     romanji.push(prefix + suffix);
   }
-  for (const prefix of ['', 'k', 's', 't']) {
+  for (const prefix of ['', 'k', 's', 't', 'n', 'h', 'm', 'y', 'r', 'w']) {
     romanji2.push(prefix + suffix);
   }
 }
